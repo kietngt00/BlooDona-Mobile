@@ -4,7 +4,6 @@ import {
   Text,
   TextInput,
   TouchableWithoutFeedback,
-  TouchableOpacity,
 } from "react-native"
 import { SafeAreaView } from "react-native-safe-area-context"
 import AuthSVG from "../../../assets/svg/AuthSVG"
@@ -17,6 +16,7 @@ import AppleLogoSVG from "../../../assets/svg/AppleLogoSVG"
 import BasePassword from "../../components/BasePassword"
 import { ScenceKey } from "../../globals/constants"
 import { AppContext } from "../../app/context/AppContext"
+import Button from "../../components/Button"
 
 const LoginScreen = ({ navigation }) => {
   const { setIsLogin } = useContext(AppContext)
@@ -38,39 +38,35 @@ const LoginScreen = ({ navigation }) => {
           </View>
           <BasePassword placeholder="Password" />
         </View>
-        <TouchableOpacity style={styles.forgetPassContainer}>
-          <Text style={styles.forgetPassword}>Forgot Password?</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.loginButton}
+        <Button
+          text="Forgot Password?"
+          styles={{
+            container: styles.forgetPassContainer,
+            text: styles.forgetPassword,
+          }}
+        />
+        <Button
+          text="Login"
+          styles={{ container: styles.loginButton, text: styles.login }}
           onPress={() => {
             setIsLogin(false)
-            navigation.navigate(ScenceKey.HomeScreen)
+            navigation.navigate(ScenceKey.BottomNavBar)
           }}
-        >
-          <Text style={styles.login}>Login</Text>
-        </TouchableOpacity>
+        />
         <View style={styles.signUpContainer}>
           <Text fontFamily={FONT.fontRegular}>Don't have an account yet? </Text>
-          <TouchableOpacity
-            style={styles.signUpButton}
+          <Button
+            text="Sign Up"
+            styles={{ container: styles.signUpButton, text: styles.signUp }}
             onPress={() => navigation.navigate(ScenceKey.SignUpScreen)}
-          >
-            <Text style={styles.signUp}>Sign up</Text>
-          </TouchableOpacity>
+          />
         </View>
         <View style={styles.bottom}>
           <Text style={styles.bottomText}>Sign In With</Text>
           <View style={styles.logos}>
-            <TouchableOpacity>
-              <FacebookLogoSVG height={40} width={40} />
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <GoogleLogoSVG height={40} width={40} />
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <AppleLogoSVG height={40} width={40} />
-            </TouchableOpacity>
+            <Button child={<FacebookLogoSVG height={40} width={40} />} />
+            <Button child={<GoogleLogoSVG height={40} width={40} />} />
+            <Button child={<AppleLogoSVG height={40} width={40} />}/>
           </View>
         </View>
       </SafeAreaView>

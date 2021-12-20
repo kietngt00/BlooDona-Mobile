@@ -30,6 +30,7 @@ export const styles = StyleSheet.create({
   },
   phoneContainer: {
     flexDirection: "row",
+    alignItems: 'center'
   },
   subTitle: {
     fontSize: 20,
@@ -39,8 +40,6 @@ export const styles = StyleSheet.create({
   button: {
     width: SCREEN_WIDTH * 0.8,
     height: 40,
-    justifyContent: "center",
-    alignItems: "center",
     backgroundColor: Color.primary,
     marginTop: 40,
     borderRadius: 20,

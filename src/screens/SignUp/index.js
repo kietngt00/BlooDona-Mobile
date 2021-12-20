@@ -10,6 +10,7 @@ import {
 import { SafeAreaView } from "react-native-safe-area-context"
 import AuthSVG from "../../../assets/svg/AuthSVG"
 import BasePassword from "../../components/BasePassword"
+import Button from "../../components/Button"
 import { ScenceKey } from "../../globals/constants"
 import { FONT, SCREEN_WIDTH } from "../../globals/styles"
 import { styles } from "./styles"
@@ -24,10 +25,12 @@ const SignUpScreen = ({ navigation }) => {
           <View style={styles.inputContainer}>
             <Text style={styles.subTitle}>Phone number</Text>
             <View style={styles.phoneContainer}>
-              <Text fontSize={16} fontFamily={FONT.fontRegular}>+84 </Text>
+              <Text fontSize={18} fontFamily={FONT.fontRegular}>
+                +84{" "}
+              </Text>
               <TextInput
                 placeholder="xxxxxxxxx"
-                keyboardType="phone-pad"
+                keyboardType="numeric"
                 style={styles.textInput}
               />
             </View>
@@ -41,22 +44,20 @@ const SignUpScreen = ({ navigation }) => {
             <BasePassword placeholder="Please enter your password" />
           </View>
         </View>
-        <TouchableOpacity
-          style={styles.button}
+        <Button
+          text="Sign Up"
+          styles={{ container: styles.button, text: styles.signUp }}
           onPress={() => navigation.navigate(ScenceKey.VerifyCodeScreen)}
-        >
-          <Text style={styles.signUp}>Sign Up</Text>
-        </TouchableOpacity>
+        />
         <View style={styles.bottom}>
           <Text fontSize={15} fontFamily="nunito-regular">
             Already have an account?{" "}
           </Text>
-          <TouchableOpacity
-            style={styles.loginButton}
+          <Button
+            text="Login"
+            styles={{ container: styles.loginButton, text: styles.login }}
             onPress={navigation.goBack}
-          >
-            <Text style={styles.login}>Login</Text>
-          </TouchableOpacity>
+          />
         </View>
       </SafeAreaView>
     </TouchableWithoutFeedback>

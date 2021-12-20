@@ -53,8 +53,6 @@ export const styles = StyleSheet.create({
     marginTop: 100,
     backgroundColor: Color.primary,
     borderRadius: 20,
-    justifyContent: 'center',
-    alignItems: 'center',
     height: 40
   },
   startText: {

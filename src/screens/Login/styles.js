@@ -63,8 +63,6 @@ export const styles = StyleSheet.create({
     width: SCREEN_WIDTH * 0.8,
     backgroundColor: Color.primary,
     borderRadius: 20,
-    alignItems: "center",
-    justifyContent: "center",
     marginTop: 35,
     paddingVertical: 3,
   },

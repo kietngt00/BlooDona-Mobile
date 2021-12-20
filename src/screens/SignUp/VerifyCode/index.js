@@ -16,6 +16,7 @@ import {
   useBlurOnFulfill,
   useClearByFocusCell,
 } from "react-native-confirmation-code-field"
+import Button from "../../../components/Button"
 
 const CELL_COUNT = 6
 
@@ -56,15 +57,15 @@ const VerifyCodeScreen = ({ navigation, route }) => {
             </Text>
           )}
         />
-        <TouchableOpacity style={styles.resendButton}>
-          <Text style={styles.resendText}>Resend the code</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.submitButton}
+        <Button
+          text="Resend the code"
+          styles={{ container: styles.resendButton, text: styles.resendText }}
+        />
+        <Button
+          text="Submit"
+          styles={{ container: styles.submitButton, text: styles.submitText }}
           onPress={() => navigation.navigate(ScenceKey.SignUpProfileScreen)}
-        >
-          <Text style={styles.submitText}>Submit</Text>
-        </TouchableOpacity>
+        />
       </SafeAreaView>
     </TouchableWithoutFeedback>
   )

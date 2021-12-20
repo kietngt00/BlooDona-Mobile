@@ -12,20 +12,8 @@ export const styles = StyleSheet.create({
     paddingBottom: 30,
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "space-between",
+    justifyContent: "center",
     height: SCREEN_HEIGHT * 0.08,
-  },
-  avatar: {
-    borderRadius: 35,
-    backgroundColor: "gray",
-    width: 50,
-    height: 50,
-  },
-  headerText: {
-    fontSize: 25,
-    fontFamily: FONT.fontBold,
-    color: "#fff",
-    marginHorizontal: 10,
   },
   body: {
     backgroundColor: "#fff",
@@ -34,38 +22,46 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     height: Platform.OS === "ios" ? SCREEN_HEIGHT * 0.8 : SCREEN_HEIGHT * 0.86,
   },
-  donateCountBox: {
-    width: 140,
-    height: 140,
-    borderRadius: 90,
-    backgroundColor: Color.primary,
-    marginTop: 20,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  countText: {
+  headerText: {
     fontSize: 25,
     fontFamily: FONT.fontBold,
     color: "#fff",
   },
-  donationText: {
-    fontSize: 15,
+  infoContainer: {
+    marginTop: 50,
+    marginHorizontal: 20,
+    height: SCREEN_HEIGHT*0.4
+  },
+  bodyText: {
+    fontSize: 25,
+    fontFamily: FONT.fontBold,
+    marginBottom: 10,
+    marginTop: 30,
+    color: Color.primary
+  },
+  textInput: {
+    width: 50,
+    borderBottomWidth: 1,
+    borderBottomColor: Color.primary,
+    fontSize: 18,
     fontFamily: FONT.fontRegular,
-    color: "#fff",
+    textAlign: 'center'
+  },
+  unitText: {
+    fontSize: 18,
+    fontFamily: FONT.fontBold
   },
   button: {
-    borderWidth: 1,
-    borderColor: Color.primary,
-    borderRadius: 20,
     width: 150,
-    height: 40,
-    marginTop: 10,
-    flexDirection: "row",
+    height: 150,
+    backgroundColor: Color.primary,
+    borderRadius: 80,
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   buttonText: {
-    fontSize: 20,
+    fontSize: 25,
     fontFamily: FONT.fontBold,
-    color: Color.primary,
-    marginRight: 10,
-  },
+    color: '#fff',
+  }
 })

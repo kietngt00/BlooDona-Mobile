@@ -6,7 +6,17 @@ export const ScenceKey = {
   SignUpProfileScreen: 'SignUpProfileScreen',
   AuthNavigator: 'AuthNavigator',
 
-  HomeScreen: 'HomeScreen'
+  // Bottom Nav
+  BottomNavBar: 'BottomNavBar',
+
+  HomeScreen: 'HomeScreen',
+  QRCodeScreen: 'QRCodeScreen',
+
+  BloodSOSNav: 'BloodSOSNav',
+  BloodSOSScreen: 'BroadCastScreen',
+  SOSBroadCastedScreen: 'SOSBroadCastedScreen',
+
+  CommunityScreen: 'CommunityScreen'
 
 }
 

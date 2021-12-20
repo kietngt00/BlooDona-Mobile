@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useContext } from "react"
 import {
   View,
   Text,
@@ -11,9 +11,12 @@ import { SafeAreaView } from "react-native-safe-area-context"
 import { SCREEN_WIDTH } from "../../../globals/styles"
 import { styles } from "./styles"
 import { FontAwesome5 } from "@expo/vector-icons"
-import { Color } from "../../../globals/constants"
+import { Color, ScenceKey } from "../../../globals/constants"
+import { AppContext } from "../../../app/context/AppContext"
+import Button from "../../../components/Button"
 
 const SignUpProfileScreen = ({ navigation }) => {
+  const { setIsLogin } = useContext(AppContext)
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <SafeAreaView style={styles.container}>
@@ -41,9 +44,14 @@ const SignUpProfileScreen = ({ navigation }) => {
             <FontAwesome5 name="plus" size={20} color={Color.secondary} />
             <Text style={styles.uploadText}>Upload your test paper</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.startButton}>
-            <Text style={styles.startText}>Start Now</Text>
-          </TouchableOpacity>
+          <Button
+            text="Start Now"
+            styles={{ container: styles.startButton, text: styles.startText }}
+            onPress={() => {
+              setIsLogin(false)
+              navigation.navigate(ScenceKey.BottomNavBar)
+            }}
+          />
         </View>
       </SafeAreaView>
     </TouchableWithoutFeedback>
