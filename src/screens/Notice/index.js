@@ -1,11 +1,51 @@
 import React from "react"
-import { View, Text } from "react-native"
+import { View, Text, FlatList } from "react-native"
 import { SafeAreaView } from "react-native-safe-area-context"
 import { styles } from "./styles"
 import { FontAwesome5, Ionicons } from "@expo/vector-icons"
 import Button from "../../components/Button"
 import { ScenceKey } from "../../globals/constants"
-import BaseNotice from "../../components/BaseNotice"
+import BaseNotice1 from "../../components/BaseNotice1"
+import BaseNotice2 from "../../components/BaseNotice2"
+
+const data = [
+  {
+    active: true,
+    group: "O",
+    time: 10,
+    timeType: "MIN",
+    place: "Bach Mai Hospital",
+    location: "78 Giải Phóng, Phương Đình, Đống Đa, Hà Nội",
+    map: "G.3.2",
+  },
+  {
+    active: false,
+    group: "O",
+    time: 10,
+    timeType: "MIN",
+    place: "Bach Mai Hospital",
+    location: "78 Giải Phóng, Phương Đình, Đống Đa, Hà Nội",
+    map: "G.3.2",
+  },
+  {
+    active: true,
+    group: "O",
+    time: 10,
+    timeType: "DAY",
+    place: "Bach Mai Hospital",
+    location: "78 Giải Phóng, Phương Đình, Đống Đa, Hà Nội",
+    map: "G.3.2",
+  },
+  {
+    active: false,
+    group: "O",
+    time: 10,
+    timeType: "DAY",
+    place: "Bach Mai Hospital",
+    location: "78 Giải Phóng, Phương Đình, Đống Đa, Hà Nội",
+    map: "G.3.2",
+  },
+]
 
 const NoticeScreen = ({ navigation, route }) => {
   return (
@@ -30,12 +70,21 @@ const NoticeScreen = ({ navigation, route }) => {
         <View style={styles.topBody}>
           <Button
             child={<Ionicons name="chevron-back" size={30} color="#000000" />}
-            styles={{container: styles.backButton}}
+            styles={{ container: styles.backButton }}
             onPress={navigation.goBack}
           />
           <Text style={styles.bodyText}>Notfication</Text>
         </View>
-        <BaseNotice/>
+        <FlatList
+          style={styles.list}
+          data={data}
+          keyExtractor={(item, index) => index.toString()}
+          renderItem={(itemData) => {
+            return itemData.item.active 
+              ? <BaseNotice1 data={itemData.item} />
+              : <BaseNotice2 data={itemData.item} />
+          }}
+        />
       </View>
     </SafeAreaView>
   )

@@ -47,5 +47,9 @@ export const styles = StyleSheet.create({
   backButton: {
     position: 'absolute',
     left: -110
+  },
+  list: {
+    height: SCREEN_HEIGHT*0.7,
+    marginVertical: 10
   }
 })
