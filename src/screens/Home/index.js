@@ -4,7 +4,7 @@ import { SafeAreaView } from "react-native-safe-area-context"
 import { styles } from "./styles"
 import { FontAwesome5 } from "@expo/vector-icons"
 import { FONT } from "../../globals/styles"
-import { Color } from "../../globals/constants"
+import { Color, ScenceKey } from "../../globals/constants"
 import BaseDonateInfo from "../../components/BaseDonateInfo"
 import Button from "../../components/Button"
 
@@ -61,6 +61,7 @@ const HomeScreen = ({ navigation }) => {
         <View flexDirection="row" justifyContent="space-between" width={70}>
           <Button
             child={<FontAwesome5 name="bell" size={25} color="#fff" solid />}
+            onPress={()=>navigation.navigate(ScenceKey.NoticeScreen)}
           />
           <Button
             child={<FontAwesome5 name="cog" size={25} color="#fff" solid />}

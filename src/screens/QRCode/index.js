@@ -63,7 +63,6 @@ const QRCodeScreen = ({ navigation }) => {
     setChosenOption(value)
     if (value === 0) setBodyText("Scan QR code to confirm your blood donation")
     else setBodyText("Upload QR code image to confirm your blood donation")
-    console.log(bodyText)
   }
 
   return (

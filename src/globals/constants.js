@@ -1,26 +1,29 @@
 export const ScenceKey = {
   // Auth
-  LoginScreen: 'LoginScreen',
-  SignUpScreen: 'SignUpScreen',
-  VerifyCodeScreen: 'VerfifyCodeScreen',
-  SignUpProfileScreen: 'SignUpProfileScreen',
-  AuthNavigator: 'AuthNavigator',
+  LoginScreen: "LoginScreen",
+  SignUpScreen: "SignUpScreen",
+  VerifyCodeScreen: "VerfifyCodeScreen",
+  SignUpProfileScreen: "SignUpProfileScreen",
+  AuthNavigator: "AuthNavigator",
 
   // Bottom Nav
-  BottomNavBar: 'BottomNavBar',
+  BottomNavBar: "BottomNavBar",
 
-  HomeScreen: 'HomeScreen',
-  QRCodeScreen: 'QRCodeScreen',
+  HomeNav: "HomeNav",
+  HomeScreen: "HomeScreen",
 
-  BloodSOSNav: 'BloodSOSNav',
-  BloodSOSScreen: 'BroadCastScreen',
-  SOSBroadCastedScreen: 'SOSBroadCastedScreen',
+  QRCodeScreen: "QRCodeScreen",
 
-  CommunityScreen: 'CommunityScreen'
+  BloodSOSNav: "BloodSOSNav",
+  BloodSOSScreen: "BroadCastScreen",
+  SOSBroadCastedScreen: "SOSBroadCastedScreen",
 
+  CommunityScreen: "CommunityScreen",
+
+  NoticeScreen: "NoticeScreen",
 }
 
 export const Color = {
-  primary: '#CE1212',
-  secondary: '#810000'
+  primary: "#CE1212",
+  secondary: "#810000",
 }
