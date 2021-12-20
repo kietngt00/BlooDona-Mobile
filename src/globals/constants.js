@@ -18,7 +18,9 @@ export const ScenceKey = {
   BloodSOSScreen: "BroadCastScreen",
   SOSBroadCastedScreen: "SOSBroadCastedScreen",
 
+  CommunityNav: "CommunityNav",
   CommunityScreen: "CommunityScreen",
+  JoinClubScreen: "JoinClubScreen",
 
   NoticeScreen: "NoticeScreen",
 }

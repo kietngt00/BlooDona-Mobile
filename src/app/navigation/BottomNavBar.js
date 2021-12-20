@@ -6,16 +6,9 @@ import { FontAwesome5, MaterialIcons } from "@expo/vector-icons"
 import QRCodeScreen from "../../screens/QRCode"
 import BloodSOSNav from "./BloodSOSNav"
 import HomeNav from "./HomeNav"
+import CommunityNav from "./CommunityNav"
 
 const Tab = createBottomTabNavigator()
-
-function CommunityScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>CommunityScreen!</Text>
-    </View>
-  )
-}
 
 const BottomTabBar = () => {
   return (
@@ -30,7 +23,7 @@ const BottomTabBar = () => {
               return <MaterialIcons name="filter-center-focus" size={size} color={color} />
             case ScenceKey.BloodSOSNav:
               return <FontAwesome5 name='broadcast-tower' size={size} color={color} />
-            case ScenceKey.CommunityScreen:
+            case ScenceKey.CommunityNav:
               return <MaterialIcons name="message" size={size} color={color} />
           }
         },
@@ -44,7 +37,7 @@ const BottomTabBar = () => {
       <Tab.Screen name={ScenceKey.HomeNav} component={HomeNav} />
       <Tab.Screen name={ScenceKey.QRCodeScreen} component={QRCodeScreen} />
       <Tab.Screen name={ScenceKey.BloodSOSNav} component={BloodSOSNav} />
-      <Tab.Screen name="CommunityScreen" component={CommunityScreen} />
+      <Tab.Screen name={ScenceKey.CommunityNav} component={CommunityNav} />
     </Tab.Navigator>
   )
 }
