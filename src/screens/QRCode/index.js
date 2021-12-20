@@ -6,6 +6,7 @@ import { Camera } from "expo-camera"
 import SwitchSelector from "react-native-switch-selector"
 import { AntDesign, MaterialIcons } from "@expo/vector-icons"
 import { Color } from "../../globals/constants"
+import Button from "../../components/Button"
 
 const QRCodeScreen = ({ navigation }) => {
   const [hasPermission, setHasPermission] = useState(null)
@@ -13,6 +14,11 @@ const QRCodeScreen = ({ navigation }) => {
   const [bodyText, setBodyText] = useState(
     "Scan QR code to confirm your blood donation",
   )
+  const [scanned, setScanned] = useState(false)
+  const handleScan = ({ type, data }) => {
+    setScanned(true)
+    alert(`Bar code with type ${type} and data ${data} has been scanned!`)
+  }
 
   const options = [
     {
@@ -67,10 +73,24 @@ const QRCodeScreen = ({ navigation }) => {
       </View>
       <View style={styles.body}>
         <Text style={styles.bodyText}>{bodyText}</Text>
-        {chosenOption === 0
-          ? <Camera style={styles.camera} type={Camera.Constants.Type.back} />
-          : <View style={styles.camera}></View>
-        }
+        {chosenOption === 0 ? (
+          <Camera
+            style={styles.camera}
+            type={Camera.Constants.Type.back}
+            onBarCodeScanned={scanned ? undefined : handleScan}
+          />
+        ) : (
+          <View style={styles.camera}></View>
+        )}
+        <View height={30}>
+          {scanned && chosenOption === 0 && (
+            <Button
+              text="Scan Again"
+              onPress={() => setScanned(false)}
+              styles={{ text: styles.scanAgainText }}
+            />
+          )}
+        </View>
         <SwitchSelector
           options={options}
           initial={0}

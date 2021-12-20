@@ -46,4 +46,9 @@ export const styles = StyleSheet.create({
     width: 150,
     height: 30,
   },
+  scanAgainText: {
+    fontSize: 18,
+    fontFamily: FONT.fontBold,
+    color: Color.secondary
+  }
 })

@@ -30,7 +30,7 @@ const sampleData = {
       date: "12/20/2021",
       place: "Hospital 3",
       location: "3 Street, 3 District, 3 Province",
-      map: "G.1.1",
+      map: "G.3.3",
     },
     {
       volumn: 450,

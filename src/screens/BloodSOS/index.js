@@ -31,6 +31,7 @@ const BloodSOSScreen = ({ navigation }) => {
             setOpen={setOpen}
             setValue={setValue}
             setItems={setItems}
+            placeholder="Select a level"
             style={{
               height: 40,
               borderColor: Color.primary,

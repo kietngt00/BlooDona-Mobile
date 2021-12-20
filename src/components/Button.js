@@ -6,9 +6,9 @@ const Button = (props) => {
   return (
     <TouchableOpacity
       style={{
-        ...styles?.container,
         alignItems: "center",
         justifyContent: "center",
+        ...styles?.container,
       }}
       onPress={onPress}
     >
