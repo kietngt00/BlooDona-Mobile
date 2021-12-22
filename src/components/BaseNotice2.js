@@ -3,10 +3,12 @@ import { View, Text, StyleSheet, TouchableOpacity } from "react-native"
 import { FONT, SCREEN_WIDTH } from "../globals/styles"
 import { MaterialIcons } from "@expo/vector-icons"
 
+const height = 100
+
 const BaseNotice2 = (props) => {
   const {group, time, timeType, place, location, map} = props.data
   return (
-    <TouchableOpacity style={styles.container}>
+    <View style={styles.container}>
       <View style={styles.icon}>
         <MaterialIcons name="sms" size={30} color='#3498DB' />
       </View>
@@ -18,7 +20,7 @@ const BaseNotice2 = (props) => {
         <Text style={styles.location}>{location}</Text>
         <Text style={styles.location}>{map}</Text>
       </View>
-    </TouchableOpacity>
+    </View>
   )
 }
 
@@ -27,7 +29,7 @@ export default BaseNotice2
 const styles = StyleSheet.create({
   container: {
     width: SCREEN_WIDTH * 0.95,
-    height: 130,
+    height: height,
     marginBottom: 5,
     elevation: 1,
     alignItems: "center",
@@ -37,13 +39,13 @@ const styles = StyleSheet.create({
   },
   icon: {
     paddingHorizontal: 10,
-    height: 130,
+    height: height,
     paddingTop: 10,
     marginLeft: 8
   },
   contentContainer: {
     justifyContent: "flex-start",
-    height: 130,
+    height: height,
     paddingVertical: 10,
   },
   title: {

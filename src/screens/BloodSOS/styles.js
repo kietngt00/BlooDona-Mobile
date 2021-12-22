@@ -28,9 +28,8 @@ export const styles = StyleSheet.create({
     color: "#fff",
   },
   infoContainer: {
-    marginTop: 50,
     marginHorizontal: 20,
-    height: SCREEN_HEIGHT*0.4
+    height: SCREEN_HEIGHT*0.6
   },
   bodyText: {
     fontSize: 25,
@@ -52,16 +51,24 @@ export const styles = StyleSheet.create({
     fontFamily: FONT.fontBold
   },
   button: {
-    width: 150,
-    height: 150,
+    width: 100,
+    height: 100,
     backgroundColor: Color.primary,
-    borderRadius: 80,
-    justifyContent: 'center',
-    alignItems: 'center'
+    borderRadius: 50,
+    marginTop: 40
   },
   buttonText: {
     fontSize: 25,
     fontFamily: FONT.fontBold,
     color: '#fff',
-  }
+  },
+  descriptionText: {
+    fontSize: 16,
+    fontFamily: FONT.fontRegular,
+    textAlign: 'justify',
+    height: 150,
+    textAlignVertical: 'top',
+    borderWidth: 1
+  },
+
 })

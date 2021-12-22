@@ -45,6 +45,15 @@ const data = [
     location: "78 Giải Phóng, Phương Đình, Đống Đa, Hà Nội",
     map: "G.3.2",
   },
+  {
+    active: false,
+    group: "O",
+    time: 10,
+    timeType: "DAY",
+    place: "Bach Mai Hospital",
+    location: "78 Giải Phóng, Phương Đình, Đống Đa, Hà Nội",
+    map: "G.3.2",
+  },
 ]
 
 const NoticeScreen = ({ navigation, route }) => {

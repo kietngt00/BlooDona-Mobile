@@ -10,7 +10,7 @@ const color = {
 const BaseNotice1 = (props) => {
   const {group, time, timeType, place, location, map} = props.data
   return (
-    <TouchableOpacity style={styles.container}>
+    <View style={styles.container}>
       <View style={styles.leftBorder}></View>
       <View style={styles.icon}>
         <MaterialIcons name="error-outline" size={30} color={color.main} />
@@ -26,7 +26,7 @@ const BaseNotice1 = (props) => {
           <Text style={styles.buttonText}>Accept</Text>
         </TouchableOpacity>
       </View>
-    </TouchableOpacity>
+    </View>
   )
 }
 
