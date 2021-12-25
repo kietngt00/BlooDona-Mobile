@@ -1,6 +1,6 @@
-import { Platform, StyleSheet } from "react-native"
-import { Color } from "../../globals/constants"
-import { FONT, SCREEN_HEIGHT, SCREEN_WIDTH } from "../../globals/styles"
+import { Platform, StyleSheet } from 'react-native'
+import { Color } from '../../globals/constants'
+import { FONT, SCREEN_HEIGHT, SCREEN_WIDTH } from '../../globals/styles'
 
 export const styles = StyleSheet.create({
   container: {
@@ -8,35 +8,36 @@ export const styles = StyleSheet.create({
     backgroundColor: Color.primary,
   },
   header: {
+    paddingTop : Platform.OS === 'ios' ? 0 : 20,
     paddingHorizontal: 20,
-    paddingBottom: 30,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-    height: SCREEN_HEIGHT * 0.08,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: Platform.OS === 'ios' ? SCREEN_HEIGHT * 0.1 : SCREEN_HEIGHT * 0.17,
   },
   body: {
-    backgroundColor: "#fff",
+    backgroundColor: '#fff',
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
-    alignItems: "center",
-    height: Platform.OS === "ios" ? SCREEN_HEIGHT * 0.8 : SCREEN_HEIGHT * 0.86,
+    alignItems: 'center',
+    justifyContent: 'space-around',
+    flex: 1,
   },
   headerText: {
     fontSize: 25,
     fontFamily: FONT.fontBold,
-    color: "#fff",
+    color: '#fff',
   },
   infoContainer: {
     marginHorizontal: 20,
-    height: SCREEN_HEIGHT*0.6
+    flex: 1,
   },
   bodyText: {
     fontSize: 25,
     fontFamily: FONT.fontBold,
     marginBottom: 10,
     marginTop: 30,
-    color: Color.primary
+    color: Color.primary,
   },
   textInput: {
     width: 50,
@@ -44,18 +45,18 @@ export const styles = StyleSheet.create({
     borderBottomColor: Color.primary,
     fontSize: 18,
     fontFamily: FONT.fontRegular,
-    textAlign: 'center'
+    textAlign: 'center',
   },
   unitText: {
     fontSize: 18,
-    fontFamily: FONT.fontBold
+    fontFamily: FONT.fontBold,
   },
   button: {
     width: 100,
     height: 100,
     backgroundColor: Color.primary,
     borderRadius: 50,
-    marginTop: 40
+    marginBottom: 20
   },
   buttonText: {
     fontSize: 25,
@@ -68,7 +69,6 @@ export const styles = StyleSheet.create({
     textAlign: 'justify',
     height: 150,
     textAlignVertical: 'top',
-    borderWidth: 1
+    borderWidth: 1,
   },
-
 })
