@@ -8,7 +8,7 @@ import { Color } from "../globals/constants"
 const BaseCommunity = (props) => {
   const { isPublic, club, intro, buttonText } = props.data
   return (
-    <View marginVertical={10}>
+    <View style={styles.container}>
       <View
         style={{
           ...styles.header,
@@ -46,18 +46,21 @@ export default BaseCommunity
 
 const styles = StyleSheet.create({
   container: {
-    width: SCREEN_WIDTH * 0.9,
+    elevation: 2,
+    shadowColor: "gray",
+    // shadowOffset: { width: 0, height: 2 },
+    // shadowOpacity: 0.5,
+    // shadowRadius: 2,
+    marginVertical: 10
   },
   contentContainer: {
-    elevation: 2,
     width: SCREEN_WIDTH * 0.9,
     height: 120,
-    shadowColor: "gray",
     borderBottomRightRadius: 10,
     borderBottomLeftRadius: 10,
     borderTopRightRadius: 10,
     borderWidth: 0.5,
-    borderColor: 'gray'
+    borderColor: 'gray',
   },
   header: {
     borderTopRightRadius: 10,

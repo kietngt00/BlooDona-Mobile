@@ -77,13 +77,13 @@ const styles = StyleSheet.create({
   },
   button: {
     marginTop: 10,
-    width: 50,
+    width: 55,
+    borderBottomWidth: 1,
+    borderColor: '#34A853',
   },
   buttonText: {
     fontSize: 16,
     color: "#34A853",
-    borderBottomWidth: 1,
-    borderColor: '#34A853',
-    width: 50,
+    width: 55,
   },
 })
