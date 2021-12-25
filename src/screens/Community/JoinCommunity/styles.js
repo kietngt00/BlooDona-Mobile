@@ -23,5 +23,6 @@ export const styles = StyleSheet.create({
   },
   list: {
     marginVertical: 10,
+    height: SCREEN_HEIGHT*0.65
   },
 })

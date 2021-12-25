@@ -1,27 +1,32 @@
-import { Platform, StyleSheet } from "react-native"
-import { Color } from "../../globals/constants"
-import { FONT, SCREEN_HEIGHT, SCREEN_LAYOUT, SCREEN_WIDTH } from "../../globals/styles"
+import { Platform, StyleSheet } from 'react-native'
+import { Color } from '../../globals/constants'
+import {
+  FONT,
+  SCREEN_HEIGHT,
+  SCREEN_LAYOUT,
+  SCREEN_WIDTH,
+} from '../../globals/styles'
 
 export const styles = StyleSheet.create({
   container: SCREEN_LAYOUT.container,
-  header: {...SCREEN_LAYOUT.header, justifyContent: 'space-between'},
+  header: { ...SCREEN_LAYOUT.header, justifyContent: 'space-between' },
   body: SCREEN_LAYOUT.body,
   avatar: SCREEN_LAYOUT.avatar,
   headerText: SCREEN_LAYOUT.headerText,
   bodyText: {
     ...SCREEN_LAYOUT.bodyText,
-    marginTop: 10
+    marginTop: 10,
   },
   list: {
     marginVertical: 10,
-    height: SCREEN_HEIGHT*0.5,
+    height: Platform.OS === 'ios' ? SCREEN_HEIGHT * 0.45 : SCREEN_HEIGHT * 0.5,
   },
   plusButton: {
     backgroundColor: Color.primary,
     width: 60,
     height: 60,
     borderRadius: 30,
-    marginTop: 20
+    marginTop: 20,
   },
   rightButton: {
     backgroundColor: Color.primary,
@@ -29,14 +34,14 @@ export const styles = StyleSheet.create({
     height: 40,
     borderRadius: 20,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   buttonContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     width: SCREEN_WIDTH * 0.9,
     justifyContent: 'flex-end',
-    marginTop: 40
+    marginTop: 40,
   },
   bottomText: {
     fontSize: 12,
@@ -46,10 +51,10 @@ export const styles = StyleSheet.create({
   textContainer: {
     marginRight: 5,
     backgroundColor: Color.primary,
-    borderRadius:15,
+    borderRadius: 15,
     height: 25,
     alignItems: 'center',
     justifyContent: 'center',
-    width: 120
-  }
+    width: 120,
+  },
 })
