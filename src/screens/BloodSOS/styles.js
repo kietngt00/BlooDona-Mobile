@@ -1,43 +1,20 @@
 import { Platform, StyleSheet } from 'react-native'
 import { Color } from '../../globals/constants'
-import { FONT, SCREEN_HEIGHT, SCREEN_WIDTH } from '../../globals/styles'
+import { FONT, SCREEN_HEIGHT, SCREEN_LAYOUT, SCREEN_WIDTH } from '../../globals/styles'
 
 export const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: Color.primary,
-  },
-  header: {
-    paddingTop : Platform.OS === 'ios' ? 0 : 20,
-    paddingHorizontal: 20,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: Platform.OS === 'ios' ? SCREEN_HEIGHT * 0.1 : SCREEN_HEIGHT * 0.17,
-  },
-  body: {
-    backgroundColor: '#fff',
-    borderTopLeftRadius: 30,
-    borderTopRightRadius: 30,
-    alignItems: 'center',
-    justifyContent: 'space-around',
-    flex: 1,
-  },
-  headerText: {
-    fontSize: 25,
-    fontFamily: FONT.fontBold,
-    color: '#fff',
-  },
+  container: SCREEN_LAYOUT.container,
+  header: SCREEN_LAYOUT.header,
+  body: SCREEN_LAYOUT.body,
+  headerText: SCREEN_LAYOUT.headerText,
   infoContainer: {
     marginHorizontal: 20,
     flex: 1,
   },
   bodyText: {
-    fontSize: 25,
-    fontFamily: FONT.fontBold,
+    ...SCREEN_LAYOUT.bodyText,
     marginBottom: 10,
     marginTop: 30,
-    color: Color.primary,
   },
   textInput: {
     width: 50,

@@ -1,39 +1,39 @@
-import React from "react"
-import { FlatList, Text, TouchableOpacity, View, SafeAreaView } from "react-native"
-import { styles } from "./styles"
-import { FontAwesome5, MaterialCommunityIcons } from "@expo/vector-icons"
-import Button from "../../components/Button"
-import BaseCommunity from "../../components/BaseCommunity"
-import { Color, ScenceKey } from "../../globals/constants"
+import React from 'react'
+import { View, Text, SafeAreaView, FlatList } from 'react-native'
+import { styles } from './styles'
+import { FontAwesome5, Ionicons } from '@expo/vector-icons'
+import Button from '../../../components/Button'
+import BaseCommunity from '../../../components/BaseCommunity'
+import { ScenceKey } from '../../../globals/constants'
 
 const data = [
   {
     isPublic: true,
     club: "Sample Club 1",
     intro: "Sample Intro 1",
-    buttonText: "Chat",
+    buttonText: "Participate",
   },
   {
     isPublic: false,
     club: "Sample Club 2",
     intro: "Sample Intro 2",
-    buttonText: "Chat",
+    buttonText: "Register",
   },
   {
     isPublic: false,
     club: "Sample Club 2",
     intro: "Sample Intro 2",
-    buttonText: "Chat",
+    buttonText: "Register",
   },
   {
     isPublic: true,
     club: "Sample Club 2",
     intro: "Sample Intro 2",
-    buttonText: "Chat",
+    buttonText: "Participate",
   },
 ]
 
-const CommunityScreen = ({ navigation, route }) => {
+const JoinCommunityScreen = ({ navigation, route }) => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
@@ -53,7 +53,14 @@ const CommunityScreen = ({ navigation, route }) => {
         </View>
       </View>
       <View style={styles.body}>
-        <Text style={styles.bodyText}>Community</Text>
+        <View style={styles.topBody}>
+          <Button
+            child={<Ionicons name='chevron-back' size={30} color='#000000' />}
+            styles={{ container: styles.backButton }}
+            onPress={navigation.goBack}
+          />
+          <Text style={styles.bodyText}>Community</Text>
+        </View>
         <View style={styles.list}>
           <FlatList
             data={data}
@@ -61,22 +68,9 @@ const CommunityScreen = ({ navigation, route }) => {
             renderItem={(itemData) => <BaseCommunity data={itemData.item} />}
           />
         </View>
-        <Button
-          child={<FontAwesome5 name='plus' size={20} color='#fff' />}
-          styles={{ container: styles.plusButton }}
-          onPress={() => navigation.navigate(ScenceKey.JoinCommunityScreen)}
-        />
-        <TouchableOpacity style={styles.buttonContainer}>
-          <View style={styles.textContainer}>
-            <Text style={styles.bottomText}>Chat with Doctors</Text>
-          </View>
-          <View style={styles.rightButton}>
-            <MaterialCommunityIcons name='doctor' size={30} color='#fff' />
-          </View>
-        </TouchableOpacity>
       </View>
     </SafeAreaView>
   )
 }
 
-export default CommunityScreen
+export default JoinCommunityScreen

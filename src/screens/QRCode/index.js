@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { View, Text } from "react-native"
-import { SafeAreaView } from "react-native-safe-area-context"
+import { View, Text, SafeAreaView } from "react-native"
 import { styles } from "./styles"
 import { Camera } from "expo-camera"
 import SwitchSelector from "react-native-switch-selector"

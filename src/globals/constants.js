@@ -20,7 +20,7 @@ export const ScenceKey = {
 
   CommunityNav: "CommunityNav",
   CommunityScreen: "CommunityScreen",
-  JoinClubScreen: "JoinClubScreen",
+  JoinCommunityScreen: "JoinCommunityScreen",
 
   NoticeScreen: "NoticeScreen",
 }
