@@ -18,7 +18,6 @@ import { Color, ScenceKey } from '../../globals/constants'
 import { FONT } from '../../globals/styles'
 import { styles } from './styles'
 
-
 const BloodSOSScreen = ({ navigation }) => {
   const [open, setOpen] = useState(false)
   const [value, setValue] = useState(null)
@@ -28,66 +27,125 @@ const BloodSOSScreen = ({ navigation }) => {
     { label: 'Normal', value: 2 },
   ])
 
+  // return (
+  //   <SafeAreaView style={styles.container}>
+  //     <TouchableWithoutFeedback onPress={Keyboard.dismiss} flex={1}>
+  //       <View flex={1}>
+  //         <View style={styles.header}>
+  //           <Text style={styles.headerText}>Blood SOS</Text>
+  //         </View>
+  //         <View style={styles.body}>
+  //           <KeyboardAvoidingView
+  //             style={styles.infoContainer}
+  //             behavior={Platform.OS === "ios" ? "padding" : null}
+  //           >
+  //             <ScrollView>
+  //               <Text style={styles.bodyText}>Urgent Level</Text>
+  //               <DropDownPicker
+  //                 open={open}
+  //                 value={value}
+  //                 items={items}
+  //                 setOpen={setOpen}
+  //                 setValue={setValue}
+  //                 setItems={setItems}
+  //                 placeholder='Select a level'
+  //                 itemSeparator={true}
+  //                 style={{
+  //                   height: 40,
+  //                   borderColor: Color.primary,
+  //                 }}
+  //                 textStyle={{
+  //                   fontSize: 18,
+  //                   fontFamily: FONT.fontRegular,
+  //                 }}
+  //               />
+  //               <Text style={styles.bodyText}>Blood Needed</Text>
+  //               <View flexDirection='row' alignItems='center'>
+  //                 <TextInput
+  //                   style={styles.textInput}
+  //                   keyboardType='numeric'
+  //                   maxLength={4}
+  //                 />
+  //                 <Text style={styles.unitText}>ml</Text>
+  //               </View>
+  //               <Text style={styles.bodyText}>Description</Text>
+  //               <TextInput
+  //                 style={styles.descriptionText}
+  //                 multiline={true}
+  //                 maxLength={4048}
+  //               />
+  //             </ScrollView>
+  //           </KeyboardAvoidingView>
+  //           <Button
+  //             text='SOS'
+  //             styles={{ container: styles.button, text: styles.buttonText }}
+  //             onPress={() =>
+  //               navigation.navigate(ScenceKey.SOSBroadCastedScreen)
+  //             }
+  //           />
+  //         </View>
+  //       </View>
+  //     </TouchableWithoutFeedback>
+  //   </SafeAreaView>
+  // )
+
   return (
-    <SafeAreaView style={styles.container}>
-      <TouchableWithoutFeedback onPress={Keyboard.dismiss} flex={1}>
-        <View flex={1}>
-          <View style={styles.header}>
-            <Text style={styles.headerText}>Blood SOS</Text>
-          </View>
-          <View style={styles.body}>
-            <KeyboardAvoidingView
-              style={styles.infoContainer}
-              behavior={Platform.OS === "ios" ? "padding" : null}
-            >
-              <ScrollView>
-                <Text style={styles.bodyText}>Urgent Level</Text>
-                <DropDownPicker
-                  open={open}
-                  value={value}
-                  items={items}
-                  setOpen={setOpen}
-                  setValue={setValue}
-                  setItems={setItems}
-                  placeholder='Select a level'
-                  itemSeparator={true}
-                  style={{
-                    height: 40,
-                    borderColor: Color.primary,
-                  }}
-                  textStyle={{
-                    fontSize: 18,
-                    fontFamily: FONT.fontRegular,
-                  }}
-                />
-                <Text style={styles.bodyText}>Blood Needed</Text>
-                <View flexDirection='row' alignItems='center'>
-                  <TextInput
-                    style={styles.textInput}
-                    keyboardType='numeric'
-                    maxLength={4}
-                  />
-                  <Text style={styles.unitText}>ml</Text>
-                </View>
-                <Text style={styles.bodyText}>Description</Text>
-                <TextInput
-                  style={styles.descriptionText}
-                  multiline={true}
-                  maxLength={4048}
-                />
-              </ScrollView>
-            </KeyboardAvoidingView>
-            <Button
-              text='SOS'
-              styles={{ container: styles.button, text: styles.buttonText }}
-              onPress={() =>
-                navigation.navigate(ScenceKey.SOSBroadCastedScreen)
-              }
-            />
-          </View>
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss} flex={1}>
+      <SafeAreaView style={styles.container}>
+        <View style={styles.header}>
+          <Text style={styles.headerText}>Blood SOS</Text>
         </View>
-      </TouchableWithoutFeedback>
-    </SafeAreaView>
+        <View style={styles.body}>
+          <KeyboardAvoidingView
+            style={styles.infoContainer}
+            behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+            keyboardVerticalOffset={150}
+          >
+            <ScrollView>
+              <Text style={styles.bodyText}>Urgent Level</Text>
+              <DropDownPicker
+                open={open}
+                value={value}
+                items={items}
+                setOpen={setOpen}
+                setValue={setValue}
+                setItems={setItems}
+                placeholder='Select a level'
+                itemSeparator={true}
+                style={{
+                  height: 40,
+                  borderColor: Color.primary,
+                }}
+                textStyle={{
+                  fontSize: 18,
+                  fontFamily: FONT.fontRegular,
+                }}
+              />
+              <Text style={styles.bodyText}>Blood Needed</Text>
+              <View flexDirection='row' alignItems='center'>
+                <TextInput
+                  style={styles.textInput}
+                  keyboardType='numeric'
+                  maxLength={4}
+                />
+                <Text style={styles.unitText}>ml</Text>
+              </View>
+              <Text style={styles.bodyText}>Description</Text>
+              <TextInput
+                style={styles.descriptionText}
+                multiline={true}
+                maxLength={4048}
+              />
+            </ScrollView>
+          </KeyboardAvoidingView>
+          <Button
+            text='SOS'
+            styles={{ container: styles.button, text: styles.buttonText }}
+            onPress={() => navigation.navigate(ScenceKey.SOSBroadCastedScreen)}
+          />
+        </View>
+      </SafeAreaView>
+    </TouchableWithoutFeedback>
   )
 }
 

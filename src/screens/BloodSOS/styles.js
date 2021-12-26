@@ -33,7 +33,8 @@ export const styles = StyleSheet.create({
     height: 100,
     backgroundColor: Color.primary,
     borderRadius: 50,
-    marginBottom: 20
+    position: 'absolute',
+    top: 470
   },
   buttonText: {
     fontSize: 25,
@@ -43,7 +44,7 @@ export const styles = StyleSheet.create({
   descriptionText: {
     fontSize: 16,
     fontFamily: FONT.fontRegular,
-    textAlign: 'justify',
+    textAlign: 'left',
     height: 150,
     textAlignVertical: 'top',
     borderWidth: 1,
