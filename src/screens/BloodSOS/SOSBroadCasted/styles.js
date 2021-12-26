@@ -4,11 +4,7 @@ import { FONT, SCREEN_HEIGHT, SCREEN_LAYOUT, SCREEN_WIDTH } from "../../../globa
 
 export const styles = StyleSheet.create({
   container: SCREEN_LAYOUT.container,
-  header: { 
-    height: Platform.OS === 'ios' ? SCREEN_HEIGHT * 0.1 : SCREEN_HEIGHT * 0.2,
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
+  header: SCREEN_LAYOUT.header,
   body: SCREEN_LAYOUT.body,
   headerText: SCREEN_LAYOUT.headerText,
   bodyText: {
@@ -23,9 +19,7 @@ export const styles = StyleSheet.create({
     marginTop: 40
   },
   backButton: {
-    width: SCREEN_WIDTH,
-    height: 30,
-    alignItems: "flex-start",
-    marginLeft: 20
+    position: 'absolute',
+    left: 10
   }
 })

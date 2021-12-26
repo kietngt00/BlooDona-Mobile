@@ -33,6 +33,7 @@ const BaseCommunity = (props) => {
             backgroundColor: isPublic ? "#34A853" : Color.primary,
           }}
           backgroundColor={isPublic ? "#34A853" : Color.primary}
+          onPress={props.onPress}
         >
           <Text style={styles.buttonText}>{buttonText}</Text>
           <FontAwesome5 name="play" size={14} color="#fff" />

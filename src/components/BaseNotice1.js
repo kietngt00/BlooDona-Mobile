@@ -22,7 +22,7 @@ const BaseNotice1 = (props) => {
         <Text style={styles.place}>{place}</Text>
         <Text style={styles.location}>{location}</Text>
         <Text style={styles.location}>{map}</Text>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={props.onPress}>
           <Text style={styles.buttonText}>Accept</Text>
         </TouchableOpacity>
       </View>

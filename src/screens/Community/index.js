@@ -1,35 +1,41 @@
-import React from "react"
-import { FlatList, Text, TouchableOpacity, View, SafeAreaView } from "react-native"
-import { styles } from "./styles"
-import { FontAwesome5, MaterialCommunityIcons } from "@expo/vector-icons"
-import Button from "../../components/Button"
-import BaseCommunity from "../../components/BaseCommunity"
-import { Color, ScenceKey } from "../../globals/constants"
+import React from 'react'
+import {
+  FlatList,
+  Text,
+  TouchableOpacity,
+  View,
+  SafeAreaView,
+} from 'react-native'
+import { styles } from './styles'
+import { FontAwesome5, MaterialCommunityIcons } from '@expo/vector-icons'
+import Button from '../../components/Button'
+import BaseCommunity from '../../components/BaseCommunity'
+import { Color, ScenceKey } from '../../globals/constants'
 
 const data = [
   {
     isPublic: true,
-    club: "Sample Club 1",
-    intro: "Sample Intro 1",
-    buttonText: "Chat",
+    club: 'Sample Club 1',
+    intro: 'Sample Intro 1',
+    buttonText: 'Chat',
   },
   {
     isPublic: false,
-    club: "Sample Club 2",
-    intro: "Sample Intro 2",
-    buttonText: "Chat",
+    club: 'Sample Club 2',
+    intro: 'Sample Intro 2',
+    buttonText: 'Chat',
   },
   {
     isPublic: false,
-    club: "Sample Club 2",
-    intro: "Sample Intro 2",
-    buttonText: "Chat",
+    club: 'Sample Club 2',
+    intro: 'Sample Intro 2',
+    buttonText: 'Chat',
   },
   {
     isPublic: true,
-    club: "Sample Club 2",
-    intro: "Sample Intro 2",
-    buttonText: "Chat",
+    club: 'Sample Club 2',
+    intro: 'Sample Intro 2',
+    buttonText: 'Chat',
   },
 ]
 
@@ -45,7 +51,7 @@ const CommunityScreen = ({ navigation, route }) => {
         <View flexDirection='row' justifyContent='space-between' width={70}>
           <Button
             child={<FontAwesome5 name='bell' size={25} color='#fff' solid />}
-            onPress={() => navigation.navigate(ScenceKey.NoticeScreen)}
+            onPress={() => navigation.navigate(ScenceKey.NoticeNav)}
           />
           <Button
             child={<FontAwesome5 name='cog' size={25} color='#fff' solid />}
@@ -58,7 +64,12 @@ const CommunityScreen = ({ navigation, route }) => {
           <FlatList
             data={data}
             keyExtractor={(item, index) => index.toString()}
-            renderItem={(itemData) => <BaseCommunity data={itemData.item} />}
+            renderItem={(itemData) => (
+              <BaseCommunity
+                data={itemData.item}
+                onPress={() => navigation.navigate(ScenceKey.ChatScreen)}
+              />
+            )}
           />
         </View>
         <Button

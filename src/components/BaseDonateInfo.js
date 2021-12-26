@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   donateText: {
-    fontSize: 15,
+    fontSize: 14,
     fontFamily: FONT.fontRegular,
     paddingLeft: 10,
     paddingVertical: 10,

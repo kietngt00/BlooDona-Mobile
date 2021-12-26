@@ -41,7 +41,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     width: SCREEN_WIDTH * 0.9,
     justifyContent: 'flex-end',
-    marginTop: 40,
+    marginTop: 30,
   },
   bottomText: {
     fontSize: 12,

@@ -1,31 +1,40 @@
 export const ScenceKey = {
   // Auth
-  LoginScreen: "LoginScreen",
-  SignUpScreen: "SignUpScreen",
-  VerifyCodeScreen: "VerfifyCodeScreen",
-  SignUpProfileScreen: "SignUpProfileScreen",
-  AuthNavigator: "AuthNavigator",
+  LoginScreen: 'LoginScreen',
+  SignUpScreen: 'SignUpScreen',
+  VerifyCodeScreen: 'VerfifyCodeScreen',
+  SignUpProfileScreen: 'SignUpProfileScreen',
+  AuthNavigator: 'AuthNavigator',
 
   // Bottom Nav
-  BottomNavBar: "BottomNavBar",
+  BottomNavBar: 'BottomNavBar',
 
-  HomeNav: "HomeNav",
-  HomeScreen: "HomeScreen",
+  // Home
+  HomeNav: 'HomeNav',
+  HomeScreen: 'HomeScreen',
 
-  QRCodeScreen: "QRCodeScreen",
+  QRCodeScreen: 'QRCodeScreen',
 
-  BloodSOSNav: "BloodSOSNav",
-  BloodSOSScreen: "BroadCastScreen",
-  SOSBroadCastedScreen: "SOSBroadCastedScreen",
+  // SOS
+  BloodSOSNav: 'BloodSOSNav',
+  BloodSOSScreen: 'BroadCastScreen',
+  SOSBroadCastedScreen: 'SOSBroadCastedScreen',
 
-  CommunityNav: "CommunityNav",
-  CommunityScreen: "CommunityScreen",
-  JoinCommunityScreen: "JoinCommunityScreen",
+  // Community
+  CommunityNav: 'CommunityNav',
+  CommunityScreen: 'CommunityScreen',
+  JoinCommunityScreen: 'JoinCommunityScreen',
+  RegisterCommunityScreen: 'RegisterCommunityScreen',
+  ClubRegisteredScreen: 'ClubRegisteredScreen',
+  ChatScreen: 'ChatScreen',
 
-  NoticeScreen: "NoticeScreen",
+  // Notice
+  NoticeNav: 'NoticeNav',
+  NoticeScreen: 'NoticeScreen',
+  AcceptDonateScreen: 'AcceptDonateScreen',
 }
 
 export const Color = {
-  primary: "#CE1212",
-  secondary: "#810000",
+  primary: '#CE1212',
+  secondary: '#810000',
 }

@@ -22,9 +22,9 @@ export const styles = StyleSheet.create({
     backgroundColor: "gray",
   },
   switchSelector: {
-    marginTop: 20,
     width: 150,
     height: 30,
+    marginTop: 10
   },
   scanAgainText: {
     fontSize: 18,

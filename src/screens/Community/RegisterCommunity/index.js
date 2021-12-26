@@ -1,39 +1,11 @@
 import React from 'react'
-import { View, Text, SafeAreaView, FlatList } from 'react-native'
+import { View, Text, SafeAreaView, FlatList, TextInput } from 'react-native'
 import { styles } from './styles'
 import { FontAwesome5, Ionicons } from '@expo/vector-icons'
 import Button from '../../../components/Button'
-import BaseCommunity from '../../../components/BaseCommunity'
 import { ScenceKey } from '../../../globals/constants'
 
-const data = [
-  {
-    isPublic: true,
-    club: 'Sample Club 1',
-    intro: 'Sample Intro 1',
-    buttonText: 'Participate',
-  },
-  {
-    isPublic: false,
-    club: 'Sample Club 2',
-    intro: 'Sample Intro 2',
-    buttonText: 'Register',
-  },
-  {
-    isPublic: false,
-    club: 'Sample Club 2',
-    intro: 'Sample Intro 2',
-    buttonText: 'Register',
-  },
-  {
-    isPublic: true,
-    club: 'Sample Club 2',
-    intro: 'Sample Intro 2',
-    buttonText: 'Participate',
-  },
-]
-
-const JoinCommunityScreen = ({ navigation, route }) => {
+const RegisterCommunityScreen = ({ navigation, route }) => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
@@ -59,20 +31,25 @@ const JoinCommunityScreen = ({ navigation, route }) => {
             styles={{ container: styles.backButton }}
             onPress={navigation.goBack}
           />
-          <Text style={styles.bodyText}>Community</Text>
+          <Text style={styles.bodyText}>Register</Text>
         </View>
-        <View style={styles.list}>
-          <FlatList
-            data={data}
-            keyExtractor={(item, index) => index.toString()}
-            renderItem={(itemData) => {
-              let onPress
-              if (!itemData.item.isPublic)
-                onPress = () => {
-                  navigation.navigate(ScenceKey.RegisterCommunityScreen)
-                }
-              return <BaseCommunity data={itemData.item} onPress={onPress} />
+        <Text style={styles.clubName}>Club Name</Text>
+        <View style={styles.formContainer}>
+          <Text style={styles.formField}>Field A</Text>
+          <TextInput placeholder='Example' style={styles.formInput} />
+          <Text style={styles.formField}>Field B</Text>
+          <TextInput placeholder='Example' style={styles.formInput} />
+          <Text style={styles.formField}>Field C</Text>
+          <TextInput placeholder='Example' style={styles.formInput} />
+          <Text style={styles.formField}>Field D</Text>
+          <TextInput placeholder='Example' style={styles.formInput} />
+          <Button
+            text='Submit'
+            styles={{
+              container: styles.buttonContainer,
+              text: styles.buttonText,
             }}
+            onPress={() => navigation.navigate(ScenceKey.ClubRegisteredScreen)}
           />
         </View>
       </View>
@@ -80,4 +57,4 @@ const JoinCommunityScreen = ({ navigation, route }) => {
   )
 }
 
-export default JoinCommunityScreen
+export default RegisterCommunityScreen

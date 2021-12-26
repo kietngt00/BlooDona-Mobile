@@ -3,6 +3,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack"
 import { ScenceKey } from "../../globals/constants"
 import HomeScreen from "../../screens/Home"
 import NoticeScreen from "../../screens/Notice"
+import NoticeNav from "./NoticeNav"
 
 const Stack = createNativeStackNavigator()
 
@@ -13,7 +14,7 @@ const HomeNav = () => {
       initialRouteName={ScenceKey.HomeScreen}
     >
       <Stack.Screen name={ScenceKey.HomeScreen} component={HomeScreen} />
-      <Stack.Screen name={ScenceKey.NoticeScreen} component={NoticeScreen} />
+      <Stack.Screen name={ScenceKey.NoticeNav} component={NoticeNav} />
     </Stack.Navigator>
   )
 }
