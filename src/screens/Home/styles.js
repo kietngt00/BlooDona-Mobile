@@ -1,10 +1,18 @@
-import { Platform, StyleSheet } from "react-native"
-import { Color } from "../../globals/constants"
-import { FONT, SCREEN_HEIGHT, SCREEN_LAYOUT, SCREEN_WIDTH } from "../../globals/styles"
+import { Platform, StyleSheet } from 'react-native'
+import { Color } from '../../globals/constants'
+import {
+  FONT,
+  SCREEN_HEIGHT,
+  SCREEN_LAYOUT,
+  SCREEN_WIDTH,
+} from '../../globals/styles'
 
 export const styles = StyleSheet.create({
-  container: SCREEN_LAYOUT.container,
-  header: {...SCREEN_LAYOUT.header, justifyContent: 'space-between'} ,
+  container: {
+    ...SCREEN_LAYOUT.container,
+    paddingTop: Platform.OS === 'ios' ? 45 : 0,
+  },
+  header: { ...SCREEN_LAYOUT.header, justifyContent: 'space-between' },
   avatar: SCREEN_LAYOUT.avatar,
   headerText: SCREEN_LAYOUT.headerText,
   body: SCREEN_LAYOUT.body,
@@ -14,18 +22,18 @@ export const styles = StyleSheet.create({
     borderRadius: 90,
     backgroundColor: Color.primary,
     marginTop: 20,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   countText: {
     fontSize: 25,
     fontFamily: FONT.fontBold,
-    color: "#fff",
+    color: '#fff',
   },
   donationText: {
     fontSize: 15,
     fontFamily: FONT.fontRegular,
-    color: "#fff",
+    color: '#fff',
   },
   button: {
     borderWidth: 1,
@@ -34,7 +42,7 @@ export const styles = StyleSheet.create({
     width: 150,
     height: 40,
     marginTop: 10,
-    flexDirection: "row",
+    flexDirection: 'row',
   },
   buttonText: {
     fontSize: 20,

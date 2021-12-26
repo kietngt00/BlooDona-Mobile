@@ -49,7 +49,7 @@ const sampleData = {
 
 const HomeScreen = ({ navigation }) => {
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <View style={styles.header}>
         <View flexDirection='row' alignItems='center'>
           <View style={styles.avatar}></View>
@@ -94,7 +94,7 @@ const HomeScreen = ({ navigation }) => {
           }}
         />
       </View>
-    </SafeAreaView>
+    </View>
   )
 }
 

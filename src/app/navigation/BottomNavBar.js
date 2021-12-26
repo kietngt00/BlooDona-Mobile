@@ -31,7 +31,6 @@ const BottomTabBar = () => {
         tabBarInactiveTintColor: "gray",
         headerShown: false,
         tabBarShowLabel: false,
-        unmountOnBlur: true
       })}
     >
       <Tab.Screen name={ScenceKey.HomeNav} component={HomeNav} />

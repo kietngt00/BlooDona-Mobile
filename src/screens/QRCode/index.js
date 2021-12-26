@@ -1,19 +1,22 @@
-import React, { useEffect, useState } from "react"
-import { View, Text, SafeAreaView } from "react-native"
-import { styles } from "./styles"
-import { Camera } from "expo-camera"
-import SwitchSelector from "react-native-switch-selector"
-import { AntDesign, MaterialIcons } from "@expo/vector-icons"
-import { Color } from "../../globals/constants"
-import Button from "../../components/Button"
+import React, { useEffect, useState } from 'react'
+import { View, Text, SafeAreaView } from 'react-native'
+import { styles } from './styles'
+import { Camera } from 'expo-camera'
+import SwitchSelector from 'react-native-switch-selector'
+import { AntDesign, MaterialIcons } from '@expo/vector-icons'
+import { Color } from '../../globals/constants'
+import Button from '../../components/Button'
+import { useFocusEffect } from '@react-navigation/native'
 
 const QRCodeScreen = ({ navigation }) => {
   const [hasPermission, setHasPermission] = useState(null)
   const [chosenOption, setChosenOption] = useState(0)
   const [bodyText, setBodyText] = useState(
-    "Scan QR code to confirm your blood donation",
+    'Scan QR code to confirm your blood donation',
   )
   const [scanned, setScanned] = useState(false)
+  const [hideCam, setHideCam] = useState(false)
+
   const handleScan = ({ type, data }) => {
     setScanned(true)
     alert(`Bar code with type ${type} and data ${data} has been scanned!`)
@@ -23,9 +26,9 @@ const QRCodeScreen = ({ navigation }) => {
     {
       customIcon: (
         <AntDesign
-          name="qrcode"
+          name='qrcode'
           size={30}
-          color={chosenOption === 0 ? "#fff" : "#C4C4C4"}
+          color={chosenOption === 0 ? '#fff' : '#C4C4C4'}
         />
       ),
       value: 0,
@@ -33,9 +36,9 @@ const QRCodeScreen = ({ navigation }) => {
     {
       customIcon: (
         <MaterialIcons
-          name="add-photo-alternate"
+          name='add-photo-alternate'
           size={30}
-          color={chosenOption === 1 ? "#fff" : "#C4C4C4"}
+          color={chosenOption === 1 ? '#fff' : '#C4C4C4'}
         />
       ),
       value: 1,
@@ -46,9 +49,21 @@ const QRCodeScreen = ({ navigation }) => {
     () =>
       (async () => {
         const { status } = await Camera.requestCameraPermissionsAsync()
-        setHasPermission(status === "granted")
+        setHasPermission(status === 'granted')
       })(),
     [],
+  )
+
+  useFocusEffect(
+    React.useCallback(() => {
+      // When screen is focused
+      setHideCam(false)
+
+      return () => {
+        // When screen is unfocused
+        setHideCam(true)
+      }
+    }, [setHideCam]),
   )
 
   if (hasPermission === null) {
@@ -60,8 +75,8 @@ const QRCodeScreen = ({ navigation }) => {
 
   const handleSwitch = (value) => {
     setChosenOption(value)
-    if (value === 0) setBodyText("Scan QR code to confirm your blood donation")
-    else setBodyText("Upload QR code image to confirm your blood donation")
+    if (value === 0) setBodyText('Scan QR code to confirm your blood donation')
+    else setBodyText('Upload QR code image to confirm your blood donation')
   }
 
   return (
@@ -71,7 +86,7 @@ const QRCodeScreen = ({ navigation }) => {
       </View>
       <View style={styles.body}>
         <Text style={styles.bodyText}>{bodyText}</Text>
-        {chosenOption === 0 ? (
+        {!hideCam && chosenOption === 0 ? (
           <Camera
             style={styles.camera}
             type={Camera.Constants.Type.back}
@@ -83,7 +98,7 @@ const QRCodeScreen = ({ navigation }) => {
         <View height={30}>
           {scanned && chosenOption === 0 && (
             <Button
-              text="Scan Again"
+              text='Scan Again'
               onPress={() => setScanned(false)}
               styles={{ text: styles.scanAgainText }}
             />
@@ -93,7 +108,7 @@ const QRCodeScreen = ({ navigation }) => {
           options={options}
           initial={0}
           buttonColor={Color.primary}
-          backgroundColor="#E5E5E5"
+          backgroundColor='#E5E5E5'
           onPress={(value) => handleSwitch(value)}
           style={styles.switchSelector}
         />
